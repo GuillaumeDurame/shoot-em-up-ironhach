@@ -42,13 +42,13 @@ function createEnemyShip() {
 }
 
 // cree ennemie toute les 2sec
-setInterval(createEnemyShip, 2000);
-setInterval(gameUpdate, 100);
+const intervaleId2 = setInterval(createEnemyShip, 2000);
+const intervaleId1 = setInterval(gameUpdate, 20);
 
 function gameUpdate(){
     enemies.forEach( enemyShip => {
         const topPos = parseInt(enemyShip.style.top) || 0;
-        enemyShip.style.top = topPos + 5 + 'px';
+        enemyShip.style.top = topPos + 1 + 'px';
         if (topPos >= gameArea.clientHeight - 20) {
             gameOver();
         };
@@ -110,6 +110,9 @@ function checkCollision(a, b) {
 
 function gameOver() {
     gameOverScreen.style.display = 'block';
+    clearInterval(intervaleId1);
+    clearInterval(intervaleId2);
+    
 }
 
 function restartGame() {
