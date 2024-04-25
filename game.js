@@ -37,18 +37,6 @@ function createEnemyShip() {
     enemyShip.style.left = Math.random() * (gameArea.clientWidth - 20) + 'px';
     gameArea.appendChild(enemyShip);
     enemies.push(enemyShip);
-
-    // deplacement ennemie
-    /*setInterval(() => {
-        const topPos = parseInt(enemyShip.style.top) || 0;
-        enemyShip.style.top = topPos + 5 + 'px';
-
-        // check collision avec le joueur 
-        if (topPos >= gameArea.clientHeight - 20) {
-            gameOver();
-        }
-    }, 100);*/
-
 }
 
 // cree ennemie toute les 2sec
@@ -103,23 +91,6 @@ window.addEventListener('keydown', (e) => {
         bullet.style.bottom = '20px';
         gameArea.appendChild(bullet);
         bullets.push(bullet)
-
-        // traj du projectil 
-       /* setInterval(() => {
-            const bottomPos = parseInt(bullet.style.bottom) || 0;
-            bullet.style.bottom = bottomPos + 5 + 'px';
-
-            // collision avec les ennemies
-            const enemies = document.querySelectorAll('.enemy-ship');
-            enemies.forEach((enemy) => {
-                if (checkCollision(bullet, enemy)) {
-                    enemy.remove();
-                    bullet.remove();
-                    score++;
-                    scoreDisplay.textContent = score;
-                }
-            });
-        }, 100);*/
     }
 });
 
@@ -143,8 +114,6 @@ document.querySelector('#restart').addEventListener('click', (e) => {
 })
 
 function restartGame() {
-    // location.reload();
-    // const enemies = document.querySelectorAll('.enemy-ship');
     enemies.forEach((enemy) => {
         enemy.remove();
     });
