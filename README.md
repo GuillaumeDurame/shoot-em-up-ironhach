@@ -1,4 +1,4 @@
-#Shoot em up Game
+# Shoot em up Game
 _by : Guillaume Duramé_
 This is a classic "shoot em up", made with HTML, CSS and JAVASCRIPT. Presented to be my first project for the webdev bootcamp of Ironhack.
 
